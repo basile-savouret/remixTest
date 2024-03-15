@@ -5,6 +5,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { AppProvider } from "@smartb/g2";
+import { QueryClient } from "@tanstack/react-query";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,6 +26,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+const queryClient = new QueryClient()
+
 export default function App() {
-  return <Outlet />;
+  return <AppProvider 
+  queryClient={queryClient}
+  ><Outlet /></AppProvider>;
 }
