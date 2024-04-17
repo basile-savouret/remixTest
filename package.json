@@ -16,7 +16,6 @@
     "isbot": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@smartb/g2": "1.0.0-beta.1",
     "@tanstack/react-query": "^4.32.5"
   },
   "devDependencies": {

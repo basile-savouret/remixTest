@@ -1,6 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import autoForm from "./autoForm.json";
-import { AutoForm, BackAutoFormData, Button, autoFormFormatter } from "@smartb/g2";
+import { AutoForm, BackAutoFormData, Button, autoFormFormatter } from "@komune-io/g2";
 import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
