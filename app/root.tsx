@@ -5,8 +5,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { AppProvider } from "@komune-io/g2";
+import { AppProvider, ThemeContextProvider } from "@komune-io/g2";
 import { QueryClient } from "@tanstack/react-query";
+import { theme } from "./Themes";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,7 +30,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 const queryClient = new QueryClient()
 
 export default function App() {
-  return <AppProvider 
-  queryClient={queryClient}
-  ><Outlet /></AppProvider>;
+  return (
+    <ThemeContextProvider theme={theme} >
+      <AppProvider
+        queryClient={queryClient}
+      >
+        <Outlet />
+      </AppProvider>
+      </ThemeContextProvider>
+  );
 }
